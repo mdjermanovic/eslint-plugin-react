@@ -9,10 +9,8 @@
 // Requirements
 // -----------------------------------------------------------------------------
 
-const eslint = require('eslint');
+const RuleTester = require('../../helpers/ruleTester');
 const rule = require('../../../lib/rules/jsx-no-undef');
-
-const RuleTester = eslint.RuleTester;
 
 const parsers = require('../../helpers/parsers');
 
@@ -29,8 +27,6 @@ const parserOptions = {
 // -----------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({ parserOptions });
-const linter = ruleTester.linter || eslint.linter || eslint.Linter;
-linter.defineRule('no-undef', require('../../helpers/getESLintCoreRule')('no-undef'));
 
 ruleTester.run('jsx-no-undef', rule, {
   valid: parsers.all([
