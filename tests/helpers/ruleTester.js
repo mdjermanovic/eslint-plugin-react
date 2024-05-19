@@ -54,12 +54,12 @@ if (semver.major(eslintPkg.version) >= 9) {
   const RULE_DEFINER = Symbol.for('react.RuleTester.RuleDefiner');
 
   RuleTester = class extends ESLintRuleTester {
-    constructor(config = {}) {
-      if (typeof config !== 'object' || config === null) {
+    constructor(config) {
+      if ((typeof config !== 'object' && typeof config !== 'undefined') || config === null) {
         throw new TypeError('Invalid value for "config" option. Expected an object or undefined.');
       }
 
-      const newConfig = convertToFlat(config);
+      const newConfig = convertToFlat(config || {});
 
       if (!newConfig.languageOptions.ecmaVersion) {
         newConfig.languageOptions.ecmaVersion = 5; // old default
