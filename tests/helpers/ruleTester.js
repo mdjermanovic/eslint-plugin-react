@@ -77,7 +77,9 @@ if (semver.major(eslintPkg.version) >= 9) {
             this[PLUGINS] = {};
           }
 
-          const [pluginName, ruleName] = ruleId.split('/');
+          const ruleIdSplit = ruleId.split('/');
+          const pluginName = ruleIdSplit[0];
+          const ruleName = ruleIdSplit[1];
 
           if (!this[PLUGINS][pluginName]) {
             this[PLUGINS][pluginName] = { rules: {} };
