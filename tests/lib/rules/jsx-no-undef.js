@@ -9,7 +9,11 @@
 // Requirements
 // -----------------------------------------------------------------------------
 
+const semver = require('semver');
+const eslintPkg = require('eslint/package.json');
 const RuleTester = require('../../helpers/ruleTester');
+const getRuleDefiner = require('../../helpers/getRuleDefiner');
+const getESLintCoreRule = require('../../helpers/getESLintCoreRule');
 const rule = require('../../../lib/rules/jsx-no-undef');
 
 const parsers = require('../../helpers/parsers');
@@ -27,6 +31,12 @@ const parserOptions = {
 // -----------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({ parserOptions });
+
+// In ESLint >= 9, it isn't possible to redefine a core rule, but it isn't necessary anyway since the core rules are certainly already available in the RuleTester/Linter
+if (semver.major(eslintPkg.version) < 9) {
+  const ruleDefiner = getRuleDefiner(ruleTester);
+  ruleDefiner.defineRule('no-undef', getESLintCoreRule('no-undef'));
+}
 
 ruleTester.run('jsx-no-undef', rule, {
   valid: parsers.all([

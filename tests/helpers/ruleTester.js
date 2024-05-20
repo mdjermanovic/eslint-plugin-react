@@ -78,6 +78,11 @@ if (semver.major(eslintPkg.version) >= 9) {
           }
 
           const ruleIdSplit = ruleId.split('/');
+
+          if (ruleIdSplit.length !== 2) {
+            throw new Error('ruleId should be in the format: plugin-name/rule-name');
+          }
+
           const pluginName = ruleIdSplit[0];
           const ruleName = ruleIdSplit[1];
 
