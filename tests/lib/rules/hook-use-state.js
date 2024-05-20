@@ -311,6 +311,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         function useColor() {
@@ -432,6 +433,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         function useColor() {
@@ -457,6 +459,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         function useColor() {
@@ -486,6 +489,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         const [color, setColor] = useState()
@@ -505,6 +509,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         const [color, setColor] = useState()
@@ -561,6 +566,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         const [color, setColor] = useState<string>()
@@ -584,6 +590,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import { useState } from 'react'
         function useColor() {
@@ -610,6 +617,7 @@ const tests = {
           message: 'useState call is not destructured into value + setter pair',
           suggestions: [
             {
+              desc: 'Destructure useState call into value + setter pair',
               output: `
         import React from 'react'
         function useColor() {
