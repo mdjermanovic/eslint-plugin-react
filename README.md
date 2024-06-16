@@ -205,7 +205,13 @@ The schema of the `settings.react` object would be identical to that of what's a
 <!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Flat Configs
 
-The flat configs are available via the root plugin import. They will configure the plugin under the `react/` namespace and enable JSX in [`languageOptions.parserOptions`](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new#configuration-objects).
+This plugin exports 3 flat configs.
+
+- `flat/all`
+- `flat/recommended`
+- `flat/jsx-runtime`
+
+The flat configs are available via the root plugin import. They will configure the plugin under the `react/` namespace and enable JSX in [`languageOptions.parserOptions`](https://eslint.org/docs/latest/use/configure/language-options#specifying-parser-options).
 
 ```js
 const reactPlugin = require('eslint-plugin-react');
