@@ -5,7 +5,7 @@
 const semver = require('semver');
 const eslintPkg = require('eslint/package.json');
 
-if (!semver.satisfies(eslintPkg.version, '>= 8.57.0')) {
+if (!semver.satisfies(eslintPkg.version, '>= 8.23.0')) {
   return;
 }
 
