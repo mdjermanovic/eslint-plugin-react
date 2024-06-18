@@ -4,5 +4,5 @@ const reactPlugin = require('../../../..');
 
 module.exports = [{
   files: ['**/*.jsx'],
-  ...reactPlugin.configs['flat/all']
+  ...reactPlugin.configs.flat.all
 }];

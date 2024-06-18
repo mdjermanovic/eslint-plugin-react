@@ -205,11 +205,11 @@ The schema of the `settings.react` object would be identical to that of what's a
 <!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Flat Configs
 
-This plugin exports 3 flat configs.
+This plugin exports 3 flat configs:
 
-- `flat/all`
-- `flat/recommended`
-- `flat/jsx-runtime`
+- `flat.all`
+- `flat.recommended`
+- `flat['jsx-runtime']`
 
 The flat configs are available via the root plugin import. They will configure the plugin under the `react/` namespace and enable JSX in [`languageOptions.parserOptions`](https://eslint.org/docs/latest/use/configure/language-options#specifying-parser-options).
 
@@ -218,7 +218,7 @@ const reactPlugin = require('eslint-plugin-react');
 
 module.exports = [
   …
-  reactPlugin.configs['flat/recommended'], // This is not a plugin object, but a shareable config object
+  reactPlugin.configs.flat.recommended, // This is not a plugin object, but a shareable config object
   …
 ];
 ```
@@ -236,9 +236,9 @@ module.exports = [
   …
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-    ...reactPlugin.configs['flat/recommended'],
+    ...reactPlugin.configs.flat.recommended,
     languageOptions: {
-      ...reactPlugin.configs['flat/recommended'].languageOptions,
+      ...reactPlugin.configs.flat.recommended.languageOptions,
       globals: {
         ...globals.serviceworker,
         ...globals.browser,
@@ -259,7 +259,7 @@ module.exports = [
   …
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
-    ...reactPlugin.configs['flat/recommended'],
+    ...reactPlugin.configs.flat.recommended,
   },
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],

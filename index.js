@@ -88,22 +88,22 @@ const plugin = {
   },
 };
 
-plugin.configs['flat/recommended'] = {
-  plugins: { react: plugin },
-  rules: plugin.configs.recommended.rules,
-  languageOptions: { parserOptions: plugin.configs.recommended.parserOptions },
-};
-
-plugin.configs['flat/all'] = {
-  plugins: { react: plugin },
-  rules: plugin.configs.all.rules,
-  languageOptions: { parserOptions: plugin.configs.all.parserOptions },
-};
-
-plugin.configs['flat/jsx-runtime'] = {
-  plugins: { react: plugin },
-  rules: plugin.configs['jsx-runtime'].rules,
-  languageOptions: { parserOptions: plugin.configs['jsx-runtime'].parserOptions },
+plugin.configs.flat = {
+  recommended: {
+    plugins: { react: plugin },
+    rules: plugin.configs.recommended.rules,
+    languageOptions: { parserOptions: plugin.configs.recommended.parserOptions },
+  },
+  all: {
+    plugins: { react: plugin },
+    rules: plugin.configs.all.rules,
+    languageOptions: { parserOptions: plugin.configs.all.parserOptions },
+  },
+  'jsx-runtime': {
+    plugins: { react: plugin },
+    rules: plugin.configs['jsx-runtime'].rules,
+    languageOptions: { parserOptions: plugin.configs['jsx-runtime'].parserOptions },
+  },
 };
 
 module.exports = plugin;

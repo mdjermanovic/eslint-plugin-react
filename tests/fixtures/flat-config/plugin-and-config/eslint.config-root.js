@@ -10,6 +10,6 @@ module.exports = [
   },
   {
     files: ['**/*.jsx'],
-    ...react.configs['flat/recommended']
+    ...react.configs.flat.recommended
   }
 ];
